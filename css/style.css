@@ -1,0 +1,185 @@
+body html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'IBM Plex Sans',
+        sans-serif;
+    background-color:  #cde6ff;
+;
+}
+
+.main {
+    border-top: solid white 20px;
+    border-bottom: solid white 20px;
+}
+
+.title-text {
+    font-size: 50px;
+    box-sizing: border-box;
+    color: #282d33;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.subtitle m {
+    color: #1c1c1e;
+}
+
+
+.container h2 {
+    text-align: center;
+}
+
+.container {
+    margin: 50px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #cde6ff;
+    border-radius: 5%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container .title h1 {
+    box-sizing: border-box;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.content {
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 20px;
+}
+
+.update-date {
+    padding-left: 15px;
+}
+
+.content .main-txt {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.case,
+.death,
+.recover,.global-case,.global-death,.global-recover {
+    text-align: center;
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    border: 5px solid #cde6ff;
+}
+
+.case h1,
+.death h1,
+.recover h1 {
+    color: #282d33;
+}
+
+.case .image {
+    flex: 1;
+    background: white;
+}
+
+.case .main-txt,
+.global-case .main-txt {
+    color: #f2c94c;
+}
+
+.death .main-txt,
+.global-death .main-txt {
+    color: #ce3d29;
+}
+
+.recover .main-txt,
+.global-recover .main-txt {
+    color: #219653;
+}
+
+
+
+
+.content-image {
+    margin: 50px auto;
+    width: 100%;
+    width: 300;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.image {
+    background-color: white;
+    width: 170px;
+    height: 170px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.image img {
+    width: 80%;
+    height: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+    .content .main-txt{
+        padding: 0px;
+    }
+    body {
+        background: url(/Asset/mask-woman.svg),
+            url(/Asset/image.svg);
+        background-size: 30%;
+        background-repeat: no-repeat,
+            no-repeat;
+        background-position: 120% 90%,
+            0 10%;
+            background-color: #ffffff;
+    }
+
+    .container{
+        width: 50%;
+    }
+    .content {
+        display: flex;
+    }
+
+    .content-image {
+        display: flex;
+    }
+
+    .image {
+        margin: 0;
+    }
+    .case,
+    .death,
+    .recover,
+    .global-case,
+    .global-death,
+    .global-recover {
+        text-align: center;
+        width: 27%;
+        padding: 10px;
+        border: none;
+        margin: 0;
+    }
+
+
+}
