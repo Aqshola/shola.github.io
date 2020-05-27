@@ -6,23 +6,18 @@ let Gdeath=document.querySelector(".global-death .main-txt");
 let Grecover=document.querySelector(".global-recover .main-txt");
 let updateDate=document.querySelector(".update-date span")
 
-fetch("https://api.covid19api.com/summary").then(m => m.json()).then(m => {
-    let x= m.Countries;
-    let y= m.Global;
 
-    Gcases.innerHTML = (y.TotalConfirmed).toLocaleString('en');
-    Gdeath.innerHTML = (y.TotalDeaths).toLocaleString('en');
-    Grecover.innerHTML = (y.TotalRecovered).toLocaleString('en');
+fetch("https://covid19.mathdro.id/api/countries/indonesia").then(m => m.json()).then(m => {
+    cases.innerHTML = (m.confirmed.value).toLocaleString("en");
+    death.innerHTML = (m.deaths.value).toLocaleString("en");
+    recoverd.innerHTML = (m.recovered.value).toLocaleString("en");
+    let date=new Date(m.lastUpdate);
+    updateDate.innerHTML=date.toLocaleString();
+});
 
-    x.forEach(c =>{
-        if(c.Country=="Indonesia"){
-            console.log(c);
-            let time=new Date(c.Date);
-            updateDate.innerHTML=time.toLocaleString();
-            cases.innerHTML=(c.TotalConfirmed).toLocaleString('en');
-            death.innerHTML = (c.TotalDeaths).toLocaleString('en');
-            recoverd.innerHTML = (c.TotalRecovered).toLocaleString('en');
-        }
-    }
-    )
-} );
+fetch("https://covid19.mathdro.id/api").then(m=>m.json()).then(m=>{
+    Gcases.innerHTML=(m.confirmed.value).toLocaleString("en");
+    Gdeath.innerHTML = (m.deaths.value).toLocaleString("en");
+    Grecover.innerHTML = (m.recovered.value).toLocaleString("en");
+});
+    
